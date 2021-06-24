@@ -60,6 +60,8 @@ for i in range(numNuvens):
         
 
 def printMenu():
+    pg.mixer.music.load('musica.wav')
+    pg.mixer.music.play(-1) # looping
     text = fonte.render('Bem vindo/a!', True, discos[0])
     screen.blit(text, (size[0]//2-(text.get_rect().width//2),size[1]//5-(text.get_rect().height//2)))
     text = fonte.render('Jogar ou assistir a resolução?', True, discos[0])
