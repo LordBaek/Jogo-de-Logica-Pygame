@@ -1,7 +1,6 @@
 import pygame as pg
 import sys
 import random
-from time import sleep
 from libs import nome
 
 
@@ -58,10 +57,9 @@ for i in range(numNuvens):
     tamNuvem = random.randrange(2,5)
     nuvens.append((xNuvem, yNuvem, tamNuvem))
         
-
 def printMenu():
     pg.mixer.music.load('musica.wav')
-    pg.mixer.music.play(-1) # looping
+    pg.mixer.music.play(-1) 
     text = fonte.render('Bem vindo/a!', True, discos[0])
     screen.blit(text, (size[0]//2-(text.get_rect().width//2),size[1]//5-(text.get_rect().height//2)))
     text = fonte.render('Jogar ou assistir a resolução?', True, discos[0])
@@ -96,7 +94,6 @@ def printFundo():
     pg.display.update()
 
 def printDiscos(posicoesDiscos):
-    
     global numDiscos
     for i in range(numDiscos):
         tamDisco = (size[0]//8) - (8*i)
@@ -114,6 +111,8 @@ def printDiscos(posicoesDiscos):
     pg.display.update()
 
 def printMovimentos(mov):
+    pg.mixer.Sound.play(pg.mixer.Sound('95991981.wav'))
+    pg.mixer.music.set_volume(0.1)
     text = fonteMovimentos.render(('Movimentos: %d'%mov), True, (155, 0, 0))
     screen.blit(text, (size[0]-(text.get_rect().width), size[1]-text.get_rect().height))
     pg.display.update()
@@ -135,7 +134,7 @@ def buscarOpcaoClicada(jogar, assistir):
 
         
 def ganhou(movimentos):
-    text = fonte.render('Parabéns! :)', True, ganhar)
+    text = fonte.render('Parabéns! :D', True, ganhar)
     screen.blit(text, (size[0]//2-(text.get_rect().width//2), size[1]//2-(text.get_rect().height//2)))
     pg.display.update()
     
