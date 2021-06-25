@@ -3,7 +3,6 @@ import sys
 import random
 from libs import nome
 
-
 nome()
 
 pg.init()
@@ -58,7 +57,7 @@ for i in range(numNuvens):
     nuvens.append((xNuvem, yNuvem, tamNuvem))
         
 def printMenu():
-    pg.mixer.music.load('musica.wav')
+    pg.mixer.music.load('sounds/musica.wav')
     pg.mixer.music.play(-1) 
     text = fonte.render('Bem vindo/a!', True, discos[0])
     screen.blit(text, (size[0]//2-(text.get_rect().width//2),size[1]//5-(text.get_rect().height//2)))
@@ -111,7 +110,7 @@ def printDiscos(posicoesDiscos):
     pg.display.update()
 
 def printMovimentos(mov):
-    pg.mixer.Sound.play(pg.mixer.Sound('95991981.wav'))
+    pg.mixer.Sound.play(pg.mixer.Sound('sounds/95991981.wav'))
     pg.mixer.music.set_volume(0.1)
     text = fonteMovimentos.render(('Movimentos: %d'%mov), True, (155, 0, 0))
     screen.blit(text, (size[0]-(text.get_rect().width), size[1]-text.get_rect().height))
